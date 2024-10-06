@@ -3,10 +3,8 @@ import pandas as pd
 def market_analysis(users: pd.DataFrame, orders: pd.DataFrame, items: pd.DataFrame) -> pd.DataFrame:
     select_order = orders[(orders['order_date']>='2019-01-01')&(orders['order_date']<='2019-12-31')].copy()
     select_order = select_order.groupby('buyer_id')['order_id'].nunique().reset_index().rename(columns={'order_id':'orders_in_2019'})
-    print(select_order)
     users = users.rename(columns={'user_id':'buyer_id'})
     df = pd.merge(users[['buyer_id','join_date']],select_order,on='buyer_id',how='left')
-    print(df)
     df = df.fillna(0)
     return df
     
