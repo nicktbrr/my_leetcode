@@ -10,11 +10,11 @@ class Solution:
                 if q_pos == len(queries):
                     return -1
                 l, r, v = queries[q_pos][0], queries[q_pos][1], queries[q_pos][2]
+                q_pos += 1
                 if r < i:
                     continue
                 diff[max(l, i)] += v
                 diff[r + 1] -= v
-                q_pos += 1
             curr_sum += diff[i]
         return q_pos
 
@@ -43,8 +43,8 @@ class Solution:
 
 
 
-nums = [6,7]
-queries = [[1,1,2],[1,1,5],[1,1,1],[0,1,4],[0,1,3],[0,1,2],[1,1,1],[1,1,2],[0,1,1],[0,1,3],[1,1,5],[1,1,5],[0,1,3],[1,1,5],[1,1,5]]
+nums = [0,10]
+queries = [[0,1,2],[0,0,2],[0,1,2],[1,1,4],[0,1,3],[1,1,4],[0,1,2],[0,1,2],[0,1,2],[0,0,2],[1,1,2],[0,0,2],[0,0,3],[1,1,3],[0,0,5]]
 
 s = Solution()
 print(s.minZeroArray(nums, queries))
