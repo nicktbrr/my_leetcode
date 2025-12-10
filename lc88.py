@@ -20,5 +20,3 @@ class Solution:
                 nums1[idx] = nums2[p2]
                 p2 -= 1
             idx -= 1
-
-print(Solution().merge([1,2,3,0,0,0], 3, [-1,0,5], 3))
