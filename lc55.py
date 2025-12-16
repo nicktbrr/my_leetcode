@@ -2,13 +2,13 @@ from typing import List
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        finish = len(nums) - 1
-        for i in range(len(nums) - 1, -1, -1):
-            if i + nums[i] >= finish:
-                finish = i
-        return True if finish == 0 else False
+        can_jump_idx = len(nums) - 1
+        for i in range(len(nums) - 2, -1, -1):
+            if i + nums[i] >= can_jump_idx:
+                can_jump_idx = i
+        return not can_jump_idx
 
 
-nums = [3,2,1,0,4]
-nums = [2,3,0,1,4]
-print(Solution().canJump(nums))
+nums = [3,0,8,2,0,0,1]
+res = Solution().canJump(nums)
+print(res)
