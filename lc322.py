@@ -1,5 +1,7 @@
 from typing import List
 
+#take 2 almost got it
+
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         memo = [float('inf') for i in range(amount + 1)]
