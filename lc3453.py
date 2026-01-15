@@ -11,7 +11,7 @@ class Solution:
                 y_max = y + l
             if y < y_min:
                 y_min = y
-        eps = 10E-6
+        eps = 10E-5
 
         def calc_lower(mid):
             lower_area = 0
