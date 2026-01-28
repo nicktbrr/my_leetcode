@@ -24,7 +24,6 @@ class Solution:
             if curr_dist > distances[u]:
                 continue
 
-            # Option 1: Move along a normal directed edge
             for v, w in adj_normal[u]:
                 if curr_dist + w < distances[v]:
                     distances[v] = curr_dist + w
