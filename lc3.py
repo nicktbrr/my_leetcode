@@ -12,3 +12,7 @@ class Solution:
             r += 1
             res = max(res, r - l)
         return res
+
+l = [1]
+l.insert(1,2)
+print(l)
